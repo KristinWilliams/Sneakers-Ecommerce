@@ -3,8 +3,8 @@ import React from "react";
 const MenuPopup = ({ closeMenu }) => {
   return (
     <>
-      <div className="overlay hidden"></div>
-      <div className="mobile-menu-popup hidden">
+      <div className="overlay"></div>
+      <div className="mobile-menu-popup">
         <ul>
           <li>
             <img
