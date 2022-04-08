@@ -93,6 +93,15 @@ const App = function () {
 
   return (
     <div className="container">
+      {cartBlank ? <CartEmpty /> : null}
+      {cartFull ? (
+        <CartFilled
+          itemNum={displayQuantity}
+          trashcan={setItemNum}
+          cartResetEmpty={setCartBlank}
+          cartResetFull={setCartFull}
+        />
+      ) : null}
       {modal ? (
         <ImageModal
           imgSrc={imgSrc}
@@ -138,15 +147,6 @@ const App = function () {
 
       <div className="hero-container">
         <div className="product-img-container">
-          {cartBlank ? <CartEmpty /> : null}
-          {cartFull ? (
-            <CartFilled
-              itemNum={displayQuantity}
-              trashcan={setItemNum}
-              cartResetEmpty={setCartBlank}
-              cartResetFull={setCartFull}
-            />
-          ) : null}
           <ImgSlider
             imgSrc={imgSrc}
             decrementImg={decrementImg}
